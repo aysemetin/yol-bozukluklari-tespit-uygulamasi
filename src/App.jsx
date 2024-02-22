@@ -1,5 +1,7 @@
 import Navbar from "./components/Navbar";
 import SiteRoutes from "./SiteRoutes";
+
+import "./App.css";
 import Footer from "./components/Footer";
 
 function App() {
