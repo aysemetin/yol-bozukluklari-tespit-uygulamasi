@@ -22,3 +22,4 @@ Bu proje, React ve Vite kullanılarak geliştirilmiş bir yol bozukluklarını t
 - React Router (sayfa yönlendirme için)
 - Bootstrap (kullanıcı arayüzü bileşenleri için)
 
+https://yol-bozukluklari-tespit-uygulamasi.vercel.app/
