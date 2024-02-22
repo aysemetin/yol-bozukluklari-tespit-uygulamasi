@@ -34,8 +34,8 @@ function SiteRoutes() {
 
         <Route path="/kullanici_bilgileri" element={<UserData />} />
       </Route>
-      
-      <Route path="/detaylı_bilgi" element={<DetailedInfo />} />
+
+      <Route path="/detayli_bilgi" element={<DetailedInfo />} />
       <Route path="*" element={<PagesNotFound />} />
     </Routes>
   );
