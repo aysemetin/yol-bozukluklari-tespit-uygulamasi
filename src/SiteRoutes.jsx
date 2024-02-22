@@ -9,7 +9,7 @@ import UserData from "./pages/UserData";
 import ForgotPassword from "./pages/ForgotPassword";
 import SignUp from "./pages/SignUp";
 import MainLayout from "./components/MainLayout";
-import AuthLayout from "./components/AuthLayout";
+
 
 import Success from "./pages/Success";
 import DetailedInfo from "./pages/DetailedInfo";
@@ -21,11 +21,11 @@ function SiteRoutes() {
       <Route path="/detayli_bilgi" element={<DetailedInfo />} />
       <Route path="*" element={<PagesNotFound />} />
 
-      <Route path="/" element={<AuthLayout />}>
+      
         <Route path="/giris_yap" element={<Login />} />
         <Route path="/kayit_ol" element={<SignUp />} />
         <Route path="/parola_yenile" element={<ForgotPassword />} />
-      </Route>
+      
 
       <Route path="/" element={<MainLayout />}>
         <Route path="/tespit_ekle" element={<AddDetection />} />
