@@ -15,7 +15,7 @@ function AddDetection() {
   const [address, setAddress] = useState("");
   const [images, setImages] = useState([]);
   const [selectedImages, setSelectedImages] = useState([]);
-  const [submitButtonDisabled, setSubmitButtonDisabled] = useState(true);
+  const [submitButtonDisabled, setSubmitButtonDisabled] = useState(false);
   const [photoError, setPhotoError] = useState(false);
 
   const handleTitleChange = (event) => {
@@ -60,6 +60,8 @@ function AddDetection() {
         return;
       }
 
+      setSubmitButtonDisabled(true);
+
       const imageUrls = [];
       for (const image of selectedImages) {
         const storageRef = ref(storage, `images/${image.name}`);
@@ -85,10 +87,13 @@ function AddDetection() {
       setAddress("");
       setImages([]);
       setSelectedImages([]);
+      setSubmitButtonDisabled(false);
 
       navigate("/tespit_eklendi");
     } catch (error) {
       console.error("Error adding document: ", error);
+
+      setSubmitButtonDisabled(false);
     }
   };
 
