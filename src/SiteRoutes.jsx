@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Login from "./pages/Login";
@@ -19,9 +18,10 @@ function SiteRoutes() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/detayli_bilgi" element={<DetailedInfo />} />
+      <Route path="*" element={<PagesNotFound />} />
 
       <Route path="/" element={<AuthLayout />}>
-      
         <Route path="/giris_yap" element={<Login />} />
         <Route path="/kayit_ol" element={<SignUp />} />
         <Route path="/parola_yenile" element={<ForgotPassword />} />
@@ -34,9 +34,6 @@ function SiteRoutes() {
 
         <Route path="/kullanici_bilgileri" element={<UserData />} />
       </Route>
-
-      <Route path="/detayli_bilgi" element={<DetailedInfo />} />
-      <Route path="*" element={<PagesNotFound />} />
     </Routes>
   );
 }
