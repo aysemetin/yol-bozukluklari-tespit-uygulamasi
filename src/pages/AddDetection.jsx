@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { collection, addDoc } from "firebase/firestore";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { db, storage } from "../firebase";
@@ -8,7 +8,6 @@ import { auth } from "../firebase";
 import { Form, Button, Alert } from "react-bootstrap";
 
 function AddDetection() {
-  const { id } = useParams();
   const navigate = useNavigate();
   const [title, setTitle] = useState("");
   const [location, setLocation] = useState("");
@@ -17,7 +16,6 @@ function AddDetection() {
   const [images, setImages] = useState([]);
   const [selectedImages, setSelectedImages] = useState([]);
   const [submitButtonDisabled, setSubmitButtonDisabled] = useState(true);
-
   const [photoError, setPhotoError] = useState(false);
 
   const handleTitleChange = (event) => {
@@ -70,14 +68,16 @@ function AddDetection() {
         imageUrls.push(downloadUrl);
       }
 
+      const timestamp = new Date().toISOString();
+
       await addDoc(collection(db, "detections"), {
         title,
         location: location === "Diğer" ? otherLocation : location,
         address,
         images: imageUrls,
+        timestamp,
         userUID: userUID,
       });
-      console.log("Döküman başarıyla eklendi");
 
       setTitle("");
       setLocation("");
@@ -93,8 +93,8 @@ function AddDetection() {
   };
 
   const [user, isLoading] = useAuthState(auth);
-  console.log(user.uid);
   const userUID = user.uid;
+
   if (isLoading) {
     return <h1>Loading...</h1>;
   }
