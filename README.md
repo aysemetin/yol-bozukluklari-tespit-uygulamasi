@@ -27,3 +27,12 @@ Projemiz, kullanıcıların tespit ettikleri yol bozukluklarını kolaylıkla si
 - Bootstrap (kullanıcı arayüzü bileşenleri için)
 
 https://yol-bozukluklari-tespit-uygulamasi.vercel.app/
+
+## Giriş Yapmış Kullanıcı Üzerinden Örnek Fotoğraflar
+
+![Kullanıcı Girişi](1.png)
+![Tespitlerim Sayfası](2.png)
+![Örnek Tespit1](3.png)
+![Örnek Tespit2](4.png)
+![Örnek Tespit3](5.png)
+
