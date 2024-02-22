@@ -11,7 +11,6 @@ import ForgotPassword from "./pages/ForgotPassword";
 import SignUp from "./pages/SignUp";
 import MainLayout from "./components/MainLayout";
 import AuthLayout from "./components/AuthLayout";
-
 import Success from "./pages/Success";
 import DetailedInfo from "./pages/DetailedInfo";
 
@@ -19,7 +18,7 @@ function SiteRoutes() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/detayli_bilgi" element={<DetailedInfo />} />
+      
       <Route path="*" element={<PagesNotFound />} />
 
       <Route path="/" element={<AuthLayout />}>
@@ -27,14 +26,15 @@ function SiteRoutes() {
         <Route path="/giris_yap" element={<Login />} />
         <Route path="/kayit_ol" element={<SignUp />} />
         <Route path="/parola_yenile" element={<ForgotPassword />} />
+        <Route path="/detayli_bilgi" element={<DetailedInfo />} />
       </Route>
 
       <Route path="/" element={<MainLayout />}>
         <Route path="/tespit_ekle" element={<AddDetection />} />
         <Route path="/tespit_eklendi" element={<Success />} />
         <Route path="/tespitlerim" element={<UserDetections />} />
-
         <Route path="/kullanici_bilgileri" element={<UserData />} />
+        
       </Route>
 
       
