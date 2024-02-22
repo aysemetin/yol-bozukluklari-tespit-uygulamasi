@@ -148,7 +148,7 @@ function Navbar() {
                     </NavLink>
                   </li>
                   <li className="nav-item">
-                    <NavLink className="nav-link" to="/kayıt_ol">
+                    <NavLink className="nav-link" to="/kayit_ol">
                       Kayıt Ol
                     </NavLink>
                   </li>

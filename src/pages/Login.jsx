@@ -67,7 +67,7 @@ const Login = () => {
             </button>
           </div>
           <div className="col-12">
-            <Link to="/kayıt_ol">Kayıt olmak için tıklayınız</Link>
+            <Link to="/kayit_ol">Kayıt olmak için tıklayınız</Link>
           </div>
         </form>
       </div>

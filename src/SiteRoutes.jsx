@@ -23,7 +23,7 @@ function SiteRoutes() {
       <Route path="/" element={<AuthLayout />}>
       
         <Route path="/giris_yap" element={<Login />} />
-        <Route path="/kayıt_ol" element={<SignUp />} />
+        <Route path="/kayit_ol" element={<SignUp />} />
         <Route path="/parola_yenile" element={<ForgotPassword />} />
       </Route>
 
