@@ -16,7 +16,7 @@ const Home = () => {
         <div className="col-md-8 my-5">
           <h2 className="text-center">Yol Bozuklukları Tespit Uygulaması</h2>
           <p>
-            Hoş geldiniz! Yol Bozuklukları Tespit Uygulaması, şehirlerimizin
+            Hoş geldiniz! Yol Bozuklukları Tespit Uygulaması, Bursa'nın
             ulaşım altyapısını daha güvenli ve konforlu hale getirmek için
             tasarlanmıştır. Akıllı Şehircilik ilkelerine dayanan bu uygulama,
             vatandaşların yol bozukluklarını kolayca tespit etmelerini ve
