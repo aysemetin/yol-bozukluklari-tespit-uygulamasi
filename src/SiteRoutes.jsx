@@ -18,7 +18,7 @@ function SiteRoutes() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      
+      <Route path="/detayli_bilgi" element={<DetailedInfo />} />
       <Route path="*" element={<PagesNotFound />} />
 
       <Route path="/" element={<AuthLayout />}>
@@ -26,7 +26,6 @@ function SiteRoutes() {
         <Route path="/giris_yap" element={<Login />} />
         <Route path="/kayit_ol" element={<SignUp />} />
         <Route path="/parola_yenile" element={<ForgotPassword />} />
-        <Route path="/detayli_bilgi" element={<DetailedInfo />} />
       </Route>
 
       <Route path="/" element={<MainLayout />}>
@@ -34,7 +33,6 @@ function SiteRoutes() {
         <Route path="/tespit_eklendi" element={<Success />} />
         <Route path="/tespitlerim" element={<UserDetections />} />
         <Route path="/kullanici_bilgileri" element={<UserData />} />
-        
       </Route>
 
       
