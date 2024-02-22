@@ -6,7 +6,7 @@ const Home = () => {
       <div className="row">
         <div className="col-md-4 d-flex justify-content-center align-items-center">
           <img
-            src="https://fotograf.bursa.com.tr/galeri/2013/12/1.png"
+            src="buyuksehir_logo.png"
             alt="Logo"
             className="img-fluid"
             style={{ height: "400px" }}

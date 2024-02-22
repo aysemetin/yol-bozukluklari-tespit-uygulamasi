@@ -37,7 +37,7 @@ function Navbar() {
         <img
           id="img1"
           alt="Resim Bulunamadi"
-          src="https://fotograf.bursa.com.tr/galeri/2016/02/BESYOL-KAVSAGI-RENDER-1-1024x713.jpg"
+          src="besyol-kavsagi.jpg"
           style={{
             width: "100%",
             height: "100%",
@@ -60,7 +60,7 @@ function Navbar() {
           <img
             width="500px"
             height="100px"
-            src="https://www.bursa.bel.tr/assets/images/logo_beyaz_varsa_yoksa.png"
+            src="logo_beyaz_varsa_yoksa.png"
           />
         </div>
       </div>
