@@ -79,6 +79,7 @@ function UserDetections() {
                 </Card.Text>
                 <div className="mb-3">
                   <strong>Fotoğraflar:</strong>
+                  <div className="mb-3 d-flex flex-wrap">
                   {Array.isArray(selectedDetection.images) &&
                     selectedDetection.images.map((imageUrl, index) => (
                       <div key={index} className="mt-2">
@@ -88,7 +89,15 @@ function UserDetections() {
                           className="img-thumbnail"
                           style={{ width: "150px", height: "auto" }}
                         />
-                        <hr />
+                        
+                      </div>
+                    ))}
+                  </div>
+                   
+                </div>
+
+                <div>
+                <hr />
                         <p className="text-muted mt-3 mb-0">
                           Tespit No : {selectedDetection.id.slice(0, 6)}
                         </p>
@@ -98,8 +107,6 @@ function UserDetections() {
                             ? selectedDetection.status
                             : "İncelemeye alındı."}
                         </p>
-                      </div>
-                    ))}
                 </div>
               </Card.Body>
             </Card>
