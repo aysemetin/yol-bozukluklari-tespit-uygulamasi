@@ -32,7 +32,7 @@ const Home = () => {
             Yol Bozuklukları Tespit Uygulaması'nı kullanmak çok kolay.
             Uygulamaya giriş yaptıktan sonra, çevrenizdeki yol bozukluklarını
             fotoğraflayarak ve kısa bir açıklama ekleyerek yetkililere
-            iletebilirsiniz. Bildiriminiz en kısa sürede ilgili birimlere
+            iletebilirsiniz. <a href="">Detaylı Bilgi İçin Tıklayınız.</a> Bildiriminiz en kısa sürede ilgili birimlere
             iletilir ve gerekli önlemler alınarak sorunun çözülmesi sağlanır.
           </p>
           <p>
