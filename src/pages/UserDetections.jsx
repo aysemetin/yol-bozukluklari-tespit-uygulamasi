@@ -3,15 +3,16 @@ import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../firebase";
+import { Card, ListGroup } from "react-bootstrap";
 
 function UserDetections() {
   const [detections, setDetections] = useState([]);
   const [selectedDetection, setSelectedDetection] = useState(null);
-  const [user, loading] = useAuthState(auth);
+  const [user] = useAuthState(auth);
 
   useEffect(() => {
     const fetchUserDetections = async () => {
-      if (!user) return; 
+      if (!user) return;
 
       try {
         const detectionsRef = collection(db, "detections");
@@ -31,10 +32,6 @@ function UserDetections() {
     fetchUserDetections();
   }, [user]);
 
-  if (loading) {
-    return <div className="container mt-4">Loading...</div>;
-  }
-
   const handleDetectionSelect = (id) => {
     const selected = detections.find((detection) => detection.id === id);
     setSelectedDetection(selected);
@@ -44,36 +41,35 @@ function UserDetections() {
     <div className="container mt-4">
       <div className="row">
         <div className="col-md-4">
-          <h2 className="text-center">Kullanıcı Tespitleri</h2>
-          <ul className="list-group text-center">
+          <ol className="list-group list-group-numbered">
             {detections.map((detection) => (
               <li
                 key={detection.id}
-                className="list-group-item"
-                onClick={() => handleDetectionSelect(detection.id)}
-                style={{ cursor: "pointer" }}
+                className="list-group-item d-flex justify-content-between align-items-start"
               >
-                Tespit No: {detection.id.slice(0, 6)} - {detection.title}
+                <div className="ms-2 me-auto">
+                  <div className="fw-bold">
+                    Tespit No: {detection.id.slice(0, 6)}
+                  </div>
+                  {detection.title}
+                </div>
               </li>
             ))}
-          </ul>
+          </ol>
         </div>
         <div className="col-md-8">
           {selectedDetection ? (
-            <div className="card">
-              <div
-                className="card-header"
-                style={{ backgroundColor: "lightblue" }}
-              >
-                <h3 className="card-title"> {selectedDetection.title} </h3>
-              </div>
-              <div className="card-body">
-                <p className="card-text">
+            <Card>
+              <Card.Header style={{ backgroundColor: "lightblue" }}>
+                <h3 className="card-title">{selectedDetection.title}</h3>
+              </Card.Header>
+              <Card.Body>
+                <Card.Text>
                   <strong>Konum:</strong> {selectedDetection.location}
-                </p>
-                <p className="card-text">
+                </Card.Text>
+                <Card.Text>
                   <strong>Adres:</strong> {selectedDetection.address}
-                </p>
+                </Card.Text>
                 <div className="mb-3">
                   <strong>Fotoğraflar:</strong>
                   {Array.isArray(selectedDetection.images) &&
@@ -98,8 +94,8 @@ function UserDetections() {
                       </div>
                     ))}
                 </div>
-              </div>
-            </div>
+              </Card.Body>
+            </Card>
           ) : (
             <div className="alert alert-info">Tespit seçilmedi</div>
           )}
