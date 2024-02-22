@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { collection, getDocs, query, where } from "firebase/firestore";
+import { collection, getDocs, query, where, orderBy } from "firebase/firestore";
 import { db } from "../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../firebase";
@@ -11,14 +11,18 @@ function UserDetections() {
   const [user, loading] = useAuthState(auth);
 
   useEffect(() => {
+    if (!user || !user.uid) return;
+  
     const fetchUserDetections = async () => {
-      if (!user) return;
-
       try {
         const detectionsRef = collection(db, "detections");
-        const q = query(detectionsRef, where("userUID", "==", user.uid));
+        const q = query(
+          detectionsRef,
+          where("userUID", "==", user.uid),
+          orderBy("timestamp", "desc") 
+        );
         const querySnapshot = await getDocs(q);
-
+  
         const detectionData = querySnapshot.docs.map((doc) => ({
           id: doc.id,
           ...doc.data(),
@@ -28,9 +32,10 @@ function UserDetections() {
         console.error("Error fetching user detections: ", error);
       }
     };
-
+  
     fetchUserDetections();
   }, [user]);
+  
 
   if (loading) {
     return <div className="container mt-4">Loading...</div>;
@@ -80,33 +85,33 @@ function UserDetections() {
                 <div className="mb-3">
                   <strong>Fotoğraflar:</strong>
                   <div className="mb-3 d-flex flex-wrap">
-                  {Array.isArray(selectedDetection.images) &&
-                    selectedDetection.images.map((imageUrl, index) => (
-                      <div key={index} className="mt-2">
-                        <img
-                          src={imageUrl}
-                          alt={`Image ${index + 1}`}
-                          className="img-thumbnail"
-                          style={{ width: "150px", height: "auto" }}
-                        />
-                        
-                      </div>
-                    ))}
+                    {Array.isArray(selectedDetection.images) &&
+                      selectedDetection.images.map((imageUrl, index) => (
+                        <div key={index} className="mt-2">
+                          <img
+                            src={imageUrl}
+                            alt={`Image ${index + 1}`}
+                            className="img-thumbnail"
+                            style={{ width: "150px", height: "auto" }}
+                          />
+                        </div>
+                      ))}
                   </div>
-                   
                 </div>
-
                 <div>
-                <hr />
-                        <p className="text-muted mt-3 mb-0">
-                          Tespit No : {selectedDetection.id.slice(0, 6)}
-                        </p>
-                        <p className="text-muted mb-0">
-                          Durum :{" "}
-                          {selectedDetection.status
-                            ? selectedDetection.status
-                            : "İncelemeye alındı."}
-                        </p>
+                  <hr />
+                  <p className="text-muted mt-3 mb-0">
+                    Tespit No : {selectedDetection.id.slice(0, 6)}
+                  </p>
+                  <p className="text-muted mb-0">
+                    Durum :{" "}
+                    {selectedDetection.status
+                      ? selectedDetection.status
+                      : "İncelemeye alındı."}
+                  </p>
+                  <p className="text-muted mb-0">
+                    Eklenme Tarihi : {new Date(selectedDetection.timestamp).toLocaleString()}
+                  </p>
                 </div>
               </Card.Body>
             </Card>
