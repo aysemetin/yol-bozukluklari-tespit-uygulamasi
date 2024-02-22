@@ -1,11 +1,15 @@
 # Yol Bozuklukları Tespit Uygulaması
 
-Bu proje, React ve Vite kullanılarak geliştirilmiş bir yol bozukluklarını tespit uygulamasıdır. Kullanıcılar, siteye kayıt olduktan sonra tespit ettikleri yol bozuklukları hakkında bilgi alabilir ve detaylarına göz atabilir. Ayrıca, bu uygulama akıllı şehircilik için geliştirilmiştir.
+Bu proje, React ve Vite kullanılarak geliştirilmiş bir yol bozukluklarını tespit uygulamasıdır. Kullanıcılar, siteye kayıt olduktan sonra tespit ettikleri yol bozukluklarının bildirimini yapabilir, tespitleri hakkında bilgi alabilir ve tespitlerin detaylarına göz atabilir. Ayrıca, bu uygulama akıllı şehircilik için geliştirilmiştir.
+
+Kullanılan fotoğraf ve logolar Bursa Büyükşehir Belediyesi'nin resmi sitesinden alınmıştır.
+https://fotograf.bursa.com.tr/galeri/2016/02/BESYOL-KAVSAGI-RENDER-1-1024x713.jpg
+https://www.bursa.bel.tr/assets/images/logo_beyaz_varsa_yoksa.png
+https://fotograf.bursa.com.tr/galeri/2013/12/1.png
 
 ## Özellikler
 
-- Kullanıcılar, tespit ettikleri yol bozukluklarını listeleme ve detaylarını görüntüleme imkanına sahiptir.
-
+Projemiz, kullanıcıların tespit ettikleri yol bozukluklarını kolaylıkla sisteme girmelerini, daha sonra bu tespitleri listeleyip detaylarını görüntülemelerini sağlar. Ayrıca rapor ettikleri sorunların çözüm sürecini takip edebilirler.
 
 ## Nasıl Başlatılır
 
