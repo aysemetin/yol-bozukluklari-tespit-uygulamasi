@@ -12,7 +12,7 @@ function Navbar() {
       .then(() => {
         console.log("Çıkış Yapıldı");
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
       });
     navigate("/");
@@ -27,11 +27,11 @@ function Navbar() {
           color: "#fff",
           backgroundSize: "cover",
           backgroundPosition: "center",
-          minHeight: "300px", // Jumbotron alanını büyütmek için min yükseklik ekledik
+          minHeight: "300px",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
-          position: "relative" // Logo ve metni bu div içinde konumlandırmak için
+          position: "relative",
         }}
       >
         <img
@@ -45,7 +45,7 @@ function Navbar() {
             position: "absolute",
             top: "0",
             left: "0",
-            zIndex: "0" // Arka plan resminin üzerinde olacak
+            zIndex: "0",
           }}
         />
         <div
@@ -54,7 +54,7 @@ function Navbar() {
             position: "absolute",
             top: "170px",
             left: "400px",
-            zIndex: "1" // Metnin ve logonun arka plan resminin üzerinde olmasını sağlar
+            zIndex: "1",
           }}
         >
           <img
@@ -63,11 +63,16 @@ function Navbar() {
             src="https://www.bursa.bel.tr/assets/images/logo_beyaz_varsa_yoksa.png"
           />
         </div>
-        
       </div>
-      <nav className="navbar navbar-expand-lg navbar-dark" data-bs-theme="dark" style={{backgroundColor:"#0d4e92"}}>
+      <nav
+        className="navbar navbar-expand-lg navbar-dark"
+        data-bs-theme="dark"
+        style={{ backgroundColor: "#0d4e92" }}
+      >
         <div className="container">
-          <Link className="navbar-brand" to="/">Yol Bozuklukları Tespit Uygulaması</Link>
+          <Link className="navbar-brand" to="/">
+            Yol Bozuklukları Tespit Uygulaması
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -82,13 +87,17 @@ function Navbar() {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <NavLink className="nav-link" to="/">Ana Sayfa</NavLink>
+                <NavLink className="nav-link" to="/">
+                  Ana Sayfa
+                </NavLink>
               </li>
             </ul>
             <ul className="navbar-nav ms-auto">
               {user && (
                 <li className="nav-item">
-                  <NavLink className="nav-link" to="/tespit_ekle">Tespit Ekle</NavLink>
+                  <NavLink className="nav-link" to="/tespit_ekle">
+                    Tespit Ekle
+                  </NavLink>
                 </li>
               )}
               {user ? (
@@ -104,10 +113,17 @@ function Navbar() {
                   </a>
                   <ul className="dropdown-menu bg-primary">
                     <li>
-                      <NavLink className="dropdown-item" to="/tespitlerim">Tespitlerim</NavLink>
+                      <NavLink className="dropdown-item" to="/tespitlerim">
+                        Tespitlerim
+                      </NavLink>
                     </li>
                     <li>
-                      <NavLink className="dropdown-item" to="/kullanici_bilgileri">Kullanıcı Bilgileri</NavLink>
+                      <NavLink
+                        className="dropdown-item"
+                        to="/kullanici_bilgileri"
+                      >
+                        Kullanıcı Bilgileri
+                      </NavLink>
                     </li>
                     <li>
                       <hr className="dropdown-divider" />
@@ -127,10 +143,14 @@ function Navbar() {
               ) : (
                 <>
                   <li className="nav-item">
-                    <NavLink className="nav-link" to="/giris_yap">Giriş Yap</NavLink>
+                    <NavLink className="nav-link" to="/giris_yap">
+                      Giriş Yap
+                    </NavLink>
                   </li>
                   <li className="nav-item">
-                    <NavLink className="nav-link" to="/kayıt_ol">Kayıt Ol</NavLink>
+                    <NavLink className="nav-link" to="/kayıt_ol">
+                      Kayıt Ol
+                    </NavLink>
                   </li>
                 </>
               )}

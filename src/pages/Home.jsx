@@ -4,10 +4,15 @@ const Home = () => {
   return (
     <div className="container">
       <div className="row">
-      <div className="col-md-4 d-flex justify-content-center align-items-center">
-    <img src="https://fotograf.bursa.com.tr/galeri/2013/12/1.png" alt="Logo" className="img-fluid" style={{height:"400px"}} />
-</div>
-        
+        <div className="col-md-4 d-flex justify-content-center align-items-center">
+          <img
+            src="https://fotograf.bursa.com.tr/galeri/2013/12/1.png"
+            alt="Logo"
+            className="img-fluid"
+            style={{ height: "400px" }}
+          />
+        </div>
+
         <div className="col-md-8 my-5">
           <h2 className="text-center">Yol Bozuklukları Tespit Uygulaması</h2>
           <p>

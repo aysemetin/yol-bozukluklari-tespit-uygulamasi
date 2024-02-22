@@ -8,7 +8,7 @@ function Success() {
 
     const handleCloseAlert = () => {
         setShowAlert(false);
-        navigate("/"); // Ana sayfaya yönlendirme
+        navigate("/");
     };
 
     return (

@@ -1,4 +1,3 @@
-// SiteRoutes.js
 
 import React from "react";
 import { Routes, Route } from "react-router-dom";
@@ -15,32 +14,24 @@ import AuthLayout from "./components/AuthLayout";
 
 import Success from "./pages/Success";
 
-function SiteRoutes({ user }) {
+function SiteRoutes() {
   return (
     <Routes>
-      
-      <Route path="/" element={<Home/>}/>
+      <Route path="/" element={<Home />} />
 
-      
-      
-      <Route path="/" element={<AuthLayout/>}>
-      <Route path="/giris_yap" element={<Login />} />
-      <Route path="/kayıt_ol" element={<SignUp />} />
-      <Route path="/parola_yenile" element={<ForgotPassword />} />
+      <Route path="/" element={<AuthLayout />}>
+        <Route path="/giris_yap" element={<Login />} />
+        <Route path="/kayıt_ol" element={<SignUp />} />
+        <Route path="/parola_yenile" element={<ForgotPassword />} />
       </Route>
-      
-      <Route path="/" element={<MainLayout/>}>
-      <Route path="/tespit_ekle" element={<AddDetection/>} />
-      <Route path="/tespit_eklendi" element={<Success/>} />
-      <Route path="/tespitlerim" element={<UserDetections />} />
-      
-      <Route path="/kullanici_bilgileri" element={<UserData  />} />
-      
+
+      <Route path="/" element={<MainLayout />}>
+        <Route path="/tespit_ekle" element={<AddDetection />} />
+        <Route path="/tespit_eklendi" element={<Success />} />
+        <Route path="/tespitlerim" element={<UserDetections />} />
+
+        <Route path="/kullanici_bilgileri" element={<UserData />} />
       </Route>
-      
-
-      
-
 
       <Route path="*" element={<PagesNotFound />} />
     </Routes>

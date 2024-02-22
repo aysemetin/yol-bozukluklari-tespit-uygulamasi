@@ -11,12 +11,25 @@ import { faCity } from "@fortawesome/free-solid-svg-icons";
 
 function Footer() {
   return (
-    <footer className="text-white text-center py-2" style={{ bottom: 0, left: 0, right: 0, width: "100%", backgroundColor:"#0d4e92"}}>
+    <footer
+      className="text-white text-center py-2"
+      style={{
+        bottom: 0,
+        left: 0,
+        right: 0,
+        width: "100%",
+        backgroundColor: "#0d4e92",
+      }}
+    >
       <div className="container">
         <div className="row">
           <div className="col-lg-12">
             <div className="d-flex justify-content-center">
-              <a href="https://www.bursa.bel.tr/" target="_blank" className="text-white text-decoration-none me-3">
+              <a
+                href="https://www.bursa.bel.tr/"
+                target="_blank"
+                className="text-white text-decoration-none me-3"
+              >
                 <FontAwesomeIcon icon={faCity} style={{ fontSize: "20px" }} />
               </a>
               <a

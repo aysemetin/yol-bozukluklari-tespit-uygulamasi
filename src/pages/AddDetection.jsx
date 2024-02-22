@@ -1,16 +1,15 @@
 import React, { useState } from "react";
-import { useParams, useNavigate } from "react-router-dom"; // useNavigate ile güncellendi
+import { useParams, useNavigate } from "react-router-dom";
 import { collection, addDoc } from "firebase/firestore";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
-import { db , storage} from "../firebase";
-import { useAuthState } from 'react-firebase-hooks/auth'
-import {auth} from '../firebase'
-import { Form, Button, Alert } from 'react-bootstrap';
-
+import { db, storage } from "../firebase";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../firebase";
+import { Form, Button, Alert } from "react-bootstrap";
 
 function AddDetection() {
   const { id } = useParams();
-  const navigate = useNavigate(); // useNavigate kullanımı eklendi
+  const navigate = useNavigate();
   const [title, setTitle] = useState("");
   const [location, setLocation] = useState("");
   const [otherLocation, setOtherLocation] = useState("");
@@ -18,8 +17,8 @@ function AddDetection() {
   const [images, setImages] = useState([]);
   const [selectedImages, setSelectedImages] = useState([]);
   const [submitButtonDisabled, setSubmitButtonDisabled] = useState(true);
-  
-  const [photoError, setPhotoError] = useState(false); // Yeni durum değişkeni
+
+  const [photoError, setPhotoError] = useState(false);
 
   const handleTitleChange = (event) => {
     setTitle(event.target.value);
@@ -52,18 +51,17 @@ function AddDetection() {
     const imagesArray = files.map((file) => URL.createObjectURL(file));
     setImages(imagesArray);
     setSelectedImages(files);
-    setPhotoError(false); // Fotoğraf hatasını sıfırla
+    setPhotoError(false);
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
       if (selectedImages.length < 1) {
-        setPhotoError(true); // Eğer fotoğraf yoksa hatayı ayarla
+        setPhotoError(true);
         return;
       }
 
-      // Upload images to Firebase Storage
       const imageUrls = [];
       for (const image of selectedImages) {
         const storageRef = ref(storage, `images/${image.name}`);
@@ -72,25 +70,23 @@ function AddDetection() {
         imageUrls.push(downloadUrl);
       }
 
-      // Add detection data to Firestore
       await addDoc(collection(db, "detections"), {
         title,
         location: location === "Diğer" ? otherLocation : location,
         address,
         images: imageUrls,
-        userUID: userUID // Kullanıcı kimliğini belgeye ekleyin
+        userUID: userUID,
       });
       console.log("Döküman başarıyla eklendi");
 
-      // Reset form fields after successful submission
       setTitle("");
       setLocation("");
       setOtherLocation("");
       setAddress("");
       setImages([]);
       setSelectedImages([]);
-      
-      navigate('/tespit_eklendi'); 
+
+      navigate("/tespit_eklendi");
     } catch (error) {
       console.error("Error adding document: ", error);
     }
@@ -99,10 +95,8 @@ function AddDetection() {
   const [user, isLoading] = useAuthState(auth);
   console.log(user.uid);
   const userUID = user.uid;
-  if(isLoading) {
-    return( 
-      <h1>Loading...</h1>
-    );
+  if (isLoading) {
+    return <h1>Loading...</h1>;
   }
 
   return (
@@ -155,7 +149,6 @@ function AddDetection() {
             maxLength={200}
             style={{ height: "100px", resize: "none", textAlign: "left" }}
           />
-          
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="images">
@@ -168,7 +161,7 @@ function AddDetection() {
             multiple
             onChange={handleImageChange}
           />
-          {photoError && ( // Fotoğraf hatası kontrolü
+          {photoError && (
             <Alert variant="danger" className="mt-2">
               En az 1 adet fotoğraf eklemeniz gerekmektedir.
             </Alert>
@@ -188,9 +181,8 @@ function AddDetection() {
           Gönder
         </Button>
       </Form>
-      
-      
-      <div style={{height: "200px"}}></div>
+
+      <div style={{ height: "200px" }}></div>
     </div>
   );
 }
