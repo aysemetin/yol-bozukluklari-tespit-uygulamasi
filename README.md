@@ -31,6 +31,7 @@ https://yol-bozukluklari-tespit-uygulamasi.vercel.app/
 ## Giriş Yapmış Kullanıcı Üzerinden Örnek Fotoğraflar
 
 ![Kullanıcı Girişi](/public/1.png)
+![Tespit Ekle](/public/6.png)
 ![Tespitlerim Sayfası](/public/2.png)
 ![Örnek Tespit1](/public/3.png)
 ![Örnek Tespit2](/public/4.png)
