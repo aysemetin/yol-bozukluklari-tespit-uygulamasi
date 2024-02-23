@@ -12,12 +12,8 @@ import { faCity } from "@fortawesome/free-solid-svg-icons";
 function Footer() {
   return (
     <footer
-      className="text-white text-center py-2"
+      className="footer text-white text-center py-2"
       style={{
-        bottom: 0,
-        left: 0,
-        right: 0,
-        width: "100%",
         backgroundColor: "#0d4e92",
       }}
     >
@@ -84,7 +80,7 @@ function Footer() {
               </a>
             </div>
             <p className="mt-1 mb-0" style={{ fontSize: "12px" }}>
-              Tüm Hakları Saklıdır © | 2024
+              Tüm Hakları Saklıdır © | {new Date().getFullYear()}
             </p>
             <p className="mb-0" style={{ fontSize: "12px" }}>
               Designed by Ayşe METİN
