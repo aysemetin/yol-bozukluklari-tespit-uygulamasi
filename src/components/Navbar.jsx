@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { signOut } from "firebase/auth";
 import { auth } from "../firebase";
+import "./Navbar.css";
 
 function Navbar() {
   const [user] = useAuthState(auth);
@@ -49,6 +50,7 @@ function Navbar() {
           }}
         />
         <div
+          className="logo"
           style={{
             position: "absolute",
             top: "50%",
