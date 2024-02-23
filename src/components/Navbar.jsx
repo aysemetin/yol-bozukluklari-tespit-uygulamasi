@@ -49,18 +49,17 @@ function Navbar() {
           }}
         />
         <div
-          className="şehiryazi"
           style={{
             position: "absolute",
-            top: "170px",
-            left: "400px",
+            top: "150px",
+            left: "320px",
             zIndex: "1",
           }}
         >
           <img
-            width="500px"
-            height="100px"
+            style={{ width: "70%", height: "auto" }}
             src="logo_beyaz_varsa_yoksa.png"
+            alt="Logo"
           />
         </div>
       </div>
