@@ -51,8 +51,8 @@ function Navbar() {
         <div
           style={{
             position: "absolute",
-            top: "150px",
-            left: "320px",
+            top: "50%",
+            left: "25%",
             zIndex: "1",
           }}
         >
