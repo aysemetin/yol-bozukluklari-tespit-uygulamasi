@@ -53,7 +53,8 @@ function Navbar() {
           className="logo"
           style={{
             position: "absolute",
-            top: "50%",
+            // top: "50%",
+            bottom:0,
             left: "25%",
             zIndex: "1",
           }}
