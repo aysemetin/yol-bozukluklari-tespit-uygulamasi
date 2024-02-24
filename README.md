@@ -9,7 +9,7 @@ https://fotograf.bursa.com.tr/galeri/2013/12/1.png
 
 ## Özellikler
 
-Projemiz, kullanıcıların tespit ettikleri yol bozukluklarını kolaylıkla sisteme girmelerini, daha sonra bu tespitleri listeleyip detaylarını görüntülemelerini sağlar. Ayrıca rapor ettikleri sorunların çözüm sürecini takip edebilirler.
+Proje, kullanıcıların tespit ettikleri yol bozukluklarını kolaylıkla sisteme girmelerini, daha sonra bu tespitleri listeleyip detaylarını görüntülemelerini sağlar. Ayrıca rapor ettikleri sorunların çözüm sürecini takip edebilirler.
 
 ## Nasıl Başlatılır
 
