@@ -26,7 +26,7 @@ Proje, kullanıcıların tespit ettikleri yol bozukluklarını kolaylıkla siste
 - React Router (sayfa yönlendirme için)
 - Bootstrap (kullanıcı arayüzü bileşenleri için)
 
-https://yol-bozukluklari-tespit-uygulamasi.vercel.app/
+https://yol-bozukluklari-tespit-uygulamasi-eta.vercel.app/
 
 ## Giriş Yapmış Kullanıcı Üzerinden Örnek Fotoğraflar
 
