@@ -61,7 +61,7 @@ function Navbar() {
         >
           <img
             style={{ width: "70%", height: "auto" }}
-            src="logo_beyaz_varsa_yoksa.png"
+            src="logo_beyaz_ata.png"
             alt="Logo"
           />
         </div>

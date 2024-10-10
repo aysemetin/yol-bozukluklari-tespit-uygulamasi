@@ -4,7 +4,7 @@ Bu proje, React ve Vite kullanılarak geliştirilmiş bir yol bozukluklarını t
 
 Kullanılan fotoğraf ve logolar Bursa Büyükşehir Belediyesi'nin resmi sitesinden alınmıştır.
 https://fotograf.bursa.com.tr/galeri/2016/02/BESYOL-KAVSAGI-RENDER-1-1024x713.jpg
-https://www.bursa.bel.tr/assets/images/logo_beyaz_varsa_yoksa.png
+https://www.bursa.bel.tr/assets/logo_beyaz_ata.png?v=2
 https://fotograf.bursa.com.tr/galeri/2013/12/1.png
 
 ## Özellikler
