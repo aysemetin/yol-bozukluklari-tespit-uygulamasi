@@ -55,7 +55,7 @@ function Navbar() {
             position: "absolute",
             // top: "50%",
             bottom:0,
-            left: "25%",
+            left: "20%",
             zIndex: "1",
           }}
         >
